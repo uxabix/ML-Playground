@@ -1,0 +1,304 @@
+# =============================================================================
+# ML Project .gitignore
+# Python + Jupyter + PyTorch/TensorFlow + experiment tracking + data artifacts
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+.virtualenv/
+
+# Package / dependency managers
+.pdm-python
+.pdm.toml
+.pdm-build/
+__pypackages__/
+.python-version
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+cython_debug/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.cache/
+
+# Type checkers & linters
+.ruff_cache/
+.mypy_cache/
+.pyright/
+
+# -----------------------------------------------------------------------------
+# Jupyter / IPython
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+*.nbconvert.ipynb
+
+# -----------------------------------------------------------------------------
+# Secrets & local configuration
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+secrets/
+credentials/
+*.credentials
+config.local.*
+secrets.yaml
+secrets.yml
+
+# -----------------------------------------------------------------------------
+# IDE & editors
+# -----------------------------------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+.cursor/
+
+# -----------------------------------------------------------------------------
+# OS-generated files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# -----------------------------------------------------------------------------
+# Data (raw, processed, interim — keep structure via .gitkeep if needed)
+# -----------------------------------------------------------------------------
+data/
+datasets/
+dataset/
+raw/
+processed/
+interim/
+external/
+downloads/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.arrow
+*.hdf5
+*.h5
+*.hdf
+*.nc
+*.npy
+*.npz
+*.mat
+*.pkl
+*.pickle
+*.joblib
+*.jsonl
+*.sqlite
+*.db
+
+# Allow small sample / fixture data when explicitly needed
+!data/samples/**
+!tests/fixtures/**
+!**/fixtures/**/*.csv
+!**/fixtures/**/*.json
+!**/fixtures/**/*.npy
+
+# -----------------------------------------------------------------------------
+# Model weights & checkpoints
+# -----------------------------------------------------------------------------
+models/
+checkpoints/
+weights/
+artifacts/
+saved_models/
+pretrained/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.tflite
+*.pb
+*.h5
+*.keras
+*.mar
+*.mlmodel
+*.caffemodel
+*.weights
+*.tar.gz
+*.zip
+
+# Allow tiny demo models if explicitly placed in repo
+!models/demo/**
+!checkpoints/demo/**
+
+# -----------------------------------------------------------------------------
+# Training outputs & experiment runs
+# -----------------------------------------------------------------------------
+outputs/
+output/
+results/
+experiments/
+runs/
+run/
+logs/
+log/
+tensorboard/
+tb_logs/
+lightning_logs/
+events.out.tfevents.*
+*.tfevents.*
+
+# ML experiment tracking
+wandb/
+mlruns/
+.neptune/
+comet_ml/
+clearml/
+dvclive/
+dvc/tmp/
+.dvc/cache/
+.dvc/tmp/
+
+# Hydra / OmegaConf
+multirun/
+.hydra/
+outputs/**/.hydra/
+
+# Optuna / Ray Tune
+optuna_studies/
+ray_results/
+~/ray_results/
+
+# Hugging Face & model hubs cache
+.cache/
+huggingface/
+.huggingface/
+transformers_cache/
+datasets_cache/
+torch_hub/
+.hf_home/
+
+# PyTorch
+.torch/
+*.pt.tmp
+
+# TensorFlow / Keras
+checkpoint
+*.ckpt.*
+SavedModel/
+*.meta
+*.index
+*.data-*
+
+# -----------------------------------------------------------------------------
+# Notebooks export noise
+# -----------------------------------------------------------------------------
+*.html
+*.pdf
+
+# Allow docs
+!docs/**/*.html
+!docs/**/*.pdf
+
+# -----------------------------------------------------------------------------
+# Temporary & scratch files
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+scratch/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+*.out
+*.err
+nohup.out
+
+# -----------------------------------------------------------------------------
+# Docker & deployment (local overrides only)
+# -----------------------------------------------------------------------------
+docker-compose.override.yml
+.docker/
+
+# -----------------------------------------------------------------------------
+# Misc ML tooling
+# -----------------------------------------------------------------------------
+catboost_info/
+catboost_training.json
+learn_error.tsv
+test_error.tsv
+time_left.tsv
+*.cbm
+*.lgb
+*.xgb
+*.cbm.json
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Profiling & benchmarks
+*.prof
+*.lprof
+.prof/
